@@ -1,0 +1,45 @@
+@import "node_modules/ol/ol.css";
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  user-select: none;
+}
+.scrollbar-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.scrollbar-x {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.scrollbar-x::-webkit-scrollbar,
+.scrollbar-y::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+  visibility: hidden;
+  background-color: transparent;
+}
+
+.scrollbar-x::-webkit-scrollbar-thumb,
+.scrollbar-y::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  visibility: hidden;
+  background-color: #ddd;
+}
+
+.scrollbar-x::-webkit-scrollbar-track,
+.scrollbar-y::-webkit-scrollbar-track {
+  border-radius: 0;
+  visibility: hidden;
+}
+
+.scrollbar-x:hover::-webkit-scrollbar,
+.scrollbar-y:hover::-webkit-scrollbar {
+  visibility: visible;
+}
+
+.scrollbar-x:hover::-webkit-scrollbar-thumb,
+.scrollbar-y:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}

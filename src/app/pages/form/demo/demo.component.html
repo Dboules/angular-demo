@@ -1,0 +1,38 @@
+<div id="records"></div>
+<button nz-button nzType="primary" (click)="recordAudio()">{{ recordText }}</button>
+<div class="container">
+  <span *ngIf="play" (click)="onPlay(false)" nz-icon nzType="pause" nzTheme="outline"></span>
+  <span *ngIf="!play" (click)="onPlay(true)" nz-icon nzType="caret-right" nzTheme="outline"></span>
+  <div id="wavesurfer"></div>
+  <span nz-icon nzType="delete" (click)="destory()" nzTheme="outline"></span>
+</div>
+<p>Video Snip</p>
+<video
+  #video
+  style="display: none"
+  src="assets/demo.mp4"
+  controls
+  width="280"
+  height="240"
+  muted
+></video>
+<div class="video-container">
+  <span *ngIf="play" (click)="onVideoPlay(false)" nz-icon nzType="pause" nzTheme="outline"></span>
+  <span
+    *ngIf="!play"
+    (click)="onVideoPlay(true)"
+    nz-icon
+    nzType="caret-right"
+    nzTheme="outline"
+  ></span>
+  <div class="image-list scrollbar-x">
+    <div class="list">
+      <ng-container *ngFor="let item of imageList">
+        <div class="item"><img [src]="item" alt="" /></div>
+      </ng-container>
+    </div>
+  </div>
+  <span nz-icon nzType="delete" (click)="destory()" nzTheme="outline"></span>
+</div>
+<p>canvas</p>
+<canvas #videosnip width="280" height="240"></canvas>

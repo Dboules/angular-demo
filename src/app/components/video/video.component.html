@@ -1,0 +1,27 @@
+<div class="video-container">
+  <video class="myvideo" #myVideo [src]="url" [width]="width" [height]="height"></video>
+  <div class="operate">
+    <ng-container *ngIf="isPlaying; else pauseTemplate">
+      <span (click)="pause()" nz-icon nzType="pause-circle" nzTheme="outline"></span>
+    </ng-container>
+    <ng-template #pauseTemplate>
+      <span (click)="play()" nz-icon nzType="play-circle" nzTheme="outline"></span>
+    </ng-template>
+    <span (click)="stop()" nz-icon nzType="border" nzTheme="outline"></span>
+    <nz-slider
+      [(ngModel)]="percent"
+      [nzTooltipVisible]="'never'"
+      (ngModelChange)="progressChange($event)"
+    >
+    </nz-slider>
+    <span (click)="increase()" nz-icon nzType="plus-circle" nzTheme="outline"></span>
+    <span (click)="decrease()" nz-icon nzType="minus-circle" nzTheme="outline"></span>
+  </div>
+</div>
+<canvas #canvas width="600" height="200"></canvas>
+<figure>
+  <figcaption>Listen to the T-Rex:</figcaption>
+  <audio #audio controls src="assets/audio.wav">
+    <a href="assets/audio.wav"> Download audio </a>
+  </audio>
+</figure>
